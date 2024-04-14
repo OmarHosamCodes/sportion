@@ -1,0 +1,83 @@
+name: sportion
+description: "A new Flutter project."
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.2 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.6
+  go_router: ^13.2.3
+  cached_network_image: ^3.3.1
+  firebase_auth: ^4.19.1
+  firebase_core: ^2.29.0
+  cloud_firestore: ^4.16.1
+  riverpod: ^2.5.1
+  salomon_bottom_bar: ^3.3.2
+  flutter_dotenv: ^5.1.0
+  shared_versions: ^2.0.0
+  shared_preferences: ^2.2.3
+  http: ^1.2.1
+  slimy_card:
+    git:
+      url: https://github.com/OmarHosamCodes/SlimyCard-Animated-Flutter-Package/
+  firebase_storage: ^11.7.1
+  image_picker: ^1.0.8
+  permission_handler: ^11.3.1
+  uuid: ^4.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_native_splash: ^2.4.0
+  icons_launcher: ^2.1.7
+
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/sports_bg.png
+    - assets/nutrition_bg.png
+    - assets/community_bg.png
+    - .env
+
+flutter_native_splash:
+  color: "#212121"
+
+  image: assets/logo.png
+
+  color_dark: "#212121"
+
+  image_dark: assets/logo.png
+
+  android_12:
+    image: assets/logo.png
+
+    color: "#212121"
+
+    image_dark: assets/logo.png
+    color_dark: "#212121"
+
+  android: true
+  ios: true
+  web: false
+
+  android_gravity: center
+
+  fullscreen: true
+
+icons_launcher:
+  image_path: assets/logo.png
+  platforms:
+    android:
+      enable: true
+    ios:
+      enable: true
