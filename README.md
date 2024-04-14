@@ -1,16 +1,10 @@
-# sportion
+# Sportion
 
-A new Flutter project.
+## Description
 
-## Getting Started
+Sportion is a simple app for calculating your daily caloric intake based on your weight, height, age, and activity level. It also provides a list of recommended foods to help you reach your daily caloric intake.
 
-This project is a starting point for a Flutter application.
+## APIs
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [RapidAPI](https://rapidapi.com/)
+- [API-Ninja](https://apininja.com/)
