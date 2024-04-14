@@ -1,4 +1,4 @@
-package com.sportion
+package com.ohc.sportion
 
 import io.flutter.embedding.android.FlutterActivity
 

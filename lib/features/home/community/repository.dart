@@ -10,14 +10,11 @@ class CommunityRepository {
   User? get currentUser => authInstants.currentUser;
   static final CommunityRepository instance = CommunityRepository();
 
-  Future<List<Post>> fetchPosts({
-    int limit = 10,
-  }) {
+  Future<List<Post>> fetchPosts() {
     try {
       return firestoreInstants
           .collection('posts')
           .orderBy('date', descending: true)
-          .limit(limit)
           .get()
           .then((value) {
         return value.docs.map((e) => Post.fromMap(e.data())).toList();

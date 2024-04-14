@@ -156,33 +156,40 @@ class _BMRScreenState extends State<BMRScreen> {
             ),
             const CustomGap(),
             // Calculate button
-            CustomButton.raised(
-              width: double.infinity,
-              height: 50,
-              onPressed: () async {
-                if (formKey.currentState!.validate()) {
-                  //  Calculate BMR here
-                  double bmr = await BMRRepository.instance.calculateBMR(
-                    weight: weight,
-                    height: height,
-                    age: age,
-                    gender: selectedGender,
-                    activityMultiplier: activityMultiplier,
-                  );
-                  // Show BMR result in a dialog or display below the button
-                  CustomPopups.show(CustomPopups.dialog(
-                    title: 'BMR Result',
-                    content: 'Your BMR is $bmr calories/day.',
-                  ));
-                } else {
-                  CustomPopups.show(const CustomPopups.dialog(
-                    title: 'Error',
-                    content: 'Please fill in all fields.',
-                    dialogType: DialogType.error,
-                  ));
-                }
+            Consumer(
+              builder: (_, WidgetRef ref, __) {
+                return CustomButton.raised(
+                  width: double.infinity,
+                  height: 50,
+                  onPressed: () async {
+                    if (formKey.currentState!.validate()) {
+                      //  Calculate BMR here
+                      double bmr = await BMRRepository.instance.calculateBMR(
+                        weight: weight,
+                        height: height,
+                        age: age,
+                        gender: selectedGender,
+                        activityMultiplier: activityMultiplier,
+                      );
+                      // Show BMR result in a dialog or display below the button
+                      CustomPopups.show(CustomPopups.dialog(
+                        title: 'BMR Result',
+                        content: 'Your BMR is $bmr calories/day.',
+                      ));
+                      ref
+                        ..invalidate(userProvider)
+                        ..read(userProvider);
+                    } else {
+                      CustomPopups.show(const CustomPopups.dialog(
+                        title: 'Error',
+                        content: 'Please fill in all fields.',
+                        dialogType: DialogType.error,
+                      ));
+                    }
+                  },
+                  child: const Text('Calculate BMR'),
+                );
               },
-              child: const Text('Calculate BMR'),
             ),
           ],
         ),

@@ -10,10 +10,18 @@ class ThemeRepository {
   static ThemeData get theme => ThemeData.dark(
         useMaterial3: true,
       ).copyWith(
+        colorScheme: ColorScheme.fromSeed(
+          primary: Colors.deepPurple,
+          secondary: Colors.deepPurple,
+          surface: const Color(0xFF212121),
+          onSurface: Colors.white,
+          seedColor: Colors.deepPurple,
+        ),
         cardColor: Colors.deepPurple,
         primaryColor: Colors.deepPurple,
         scaffoldBackgroundColor: const Color(0xFF212121),
         appBarTheme: const AppBarTheme(
+          color: Color(0xFF1C1B1F),
           toolbarHeight: 100,
           iconTheme: IconThemeData(
             color: Colors.white,

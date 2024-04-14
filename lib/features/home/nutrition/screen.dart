@@ -42,7 +42,7 @@ class _NutritionScreenState extends State<NutritionScreen> {
                     .then((value) => setState(() => query = _controller.text));
               },
               decoration: InputDecoration(
-                hintText: 'Search for food',
+                hintText: 'Search for food ex: 1kg chicken , fish, etc.',
                 prefixIcon: const Icon(Icons.search),
                 suffixIcon: IconButton(
                   icon: const Icon(Icons.clear),
@@ -88,7 +88,7 @@ class _NutritionScreenState extends State<NutritionScreen> {
                         isHeadline: true,
                       ),
                       title: CustomText(
-                        text: '$calories cal per 100g',
+                        text: '$calories cal',
                         isSeccoundary: true,
                       ),
                     );

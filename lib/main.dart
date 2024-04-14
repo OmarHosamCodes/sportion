@@ -7,8 +7,8 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await dotenv.load(fileName: ".env");
-  (await SharedPreferences.getInstance()).remove('nutritionList');
-  runApp(const MyApp());
+  await SharedPreferences.getInstance();
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +17,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Sportion',
       themeMode: ThemeRepository.themeMode,
       darkTheme: ThemeRepository.theme,
       routerConfig: RoutingRepository.router,

@@ -1,5 +1,5 @@
 name: sportion
-description: "A new Flutter project."
+description: "Sportion Project"
 
 publish_to: "none"
 
@@ -21,16 +21,13 @@ dependencies:
   riverpod: ^2.5.1
   salomon_bottom_bar: ^3.3.2
   flutter_dotenv: ^5.1.0
-  shared_versions: ^2.0.0
   shared_preferences: ^2.2.3
   http: ^1.2.1
-  slimy_card:
-    git:
-      url: https://github.com/OmarHosamCodes/SlimyCard-Animated-Flutter-Package/
   firebase_storage: ^11.7.1
   image_picker: ^1.0.8
   permission_handler: ^11.3.1
   uuid: ^4.4.0
+  flutter_riverpod: ^2.5.1
 
 dev_dependencies:
   flutter_test:

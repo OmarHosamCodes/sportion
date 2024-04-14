@@ -1,3 +1,4 @@
+export 'package:sportion/features/auth/provider.dart';
 export 'dart:convert';
 export 'dart:io';
 export 'package:flutter/foundation.dart';
@@ -48,3 +49,6 @@ export 'package:flutter/material.dart';
 export 'package:go_router/go_router.dart';
 export 'features/routing/constants.dart';
 export 'package:firebase_auth/firebase_auth.dart';
+export 'package:flutter_riverpod/flutter_riverpod.dart'
+    hide describeIdentity, shortHash;
+export 'package:riverpod/riverpod.dart' hide describeIdentity, shortHash;

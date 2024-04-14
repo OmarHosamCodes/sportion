@@ -69,10 +69,6 @@ class AuthRepository extends ChangeNotifier {
     UserModel user,
   ) async {
     try {
-      await currentUser!.updateDisplayName(user.name);
-
-      await currentUser!.updatePhotoURL(user.imageUrl);
-
       await currentUser!.sendEmailVerification();
 
       await firestoreInstants.collection('users').doc(currentUser!.uid).set(
