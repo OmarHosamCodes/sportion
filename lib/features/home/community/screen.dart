@@ -1,11 +1,11 @@
 import 'package:sportion/features/home/community/widgets.dart';
 import 'package:sportion/library.dart';
 
-class CommumityScreen extends StatelessWidget {
+class CommumityScreen extends ConsumerWidget {
   const CommumityScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return Scaffold(
       appBar: AppBar(
         title: const CustomText(text: 'Community'),
@@ -63,7 +63,7 @@ class PostWidget extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           final author = snapshot.data as UserModel;
           return Card.filled(
-            color: const Color(0xFF1C1B1F),
+            color: RoutingRepository.context.theme.colorScheme.secondary,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

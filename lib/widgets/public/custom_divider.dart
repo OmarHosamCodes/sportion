@@ -1,6 +1,6 @@
 import 'package:sportion/library.dart';
 
-class CustomDivider extends StatelessWidget {
+class CustomDivider extends ConsumerWidget {
   final int length;
   final DividerType type;
 
@@ -10,7 +10,7 @@ class CustomDivider extends StatelessWidget {
       : type = DividerType.vertical;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return switch (type) {
       DividerType.horizontal => SizedBox(
           width: length.toDouble(),

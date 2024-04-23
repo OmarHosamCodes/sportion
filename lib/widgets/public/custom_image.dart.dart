@@ -1,7 +1,7 @@
 import 'package:sportion/library.dart';
 
 /// A widget that displays an image from a network or memory source.
-class CustomImage extends StatelessWidget {
+class CustomImage extends ConsumerWidget {
   /// Constructs a [CustomImage] widget with smart image loading.
   const CustomImage({
     required this.source,
@@ -28,7 +28,7 @@ class CustomImage extends StatelessWidget {
   final BoxFit? fit;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return buildSmartImage();
   }
 
@@ -79,7 +79,7 @@ class CustomImage extends StatelessWidget {
   Widget buildErrorImage() {
     return Icon(
       fallbackIcon,
-      color: const Color(0xFF0f0f0f),
+      color: RoutingRepository.context.theme.colorScheme.error,
       size: 50,
     );
   }

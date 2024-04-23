@@ -1,14 +1,13 @@
-import 'package:sportion/features/water/repository.dart';
 import 'package:sportion/library.dart';
 
-class WaterScreen extends StatefulWidget {
+class WaterScreen extends ConsumerStatefulWidget {
   const WaterScreen({super.key});
 
   @override
-  State<WaterScreen> createState() => _WaterScreenState();
+  ConsumerState<WaterScreen> createState() => _WaterScreenState();
 }
 
-class _WaterScreenState extends State<WaterScreen> {
+class _WaterScreenState extends ConsumerState<WaterScreen> {
   static final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   late TextEditingController weightController;
@@ -36,7 +35,7 @@ class _WaterScreenState extends State<WaterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const CustomText(text: 'Water Intake Calculator'),
+        title: const Text('Water Intake Calculator'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),
@@ -66,7 +65,7 @@ class _WaterScreenState extends State<WaterScreen> {
                   return CustomButton.raised(
                     width: double.infinity,
                     height: 50,
-                    child: const CustomText(text: 'Calculate'),
+                    child: const Text('Calculate'),
                     onPressed: () async {
                       if (formKey.currentState!.validate()) {
                         double waterIntake =

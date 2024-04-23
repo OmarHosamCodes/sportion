@@ -7,64 +7,71 @@ class ThemeRepository {
           color: Colors.deepPurple,
         ),
       );
+
   static ThemeData get theme => ThemeData.dark(
         useMaterial3: true,
       ).copyWith(
         colorScheme: ColorScheme.fromSeed(
           primary: Colors.deepPurple,
-          secondary: Colors.deepPurple,
-          surface: const Color(0xFF212121),
-          onSurface: Colors.white,
+          secondary: const Color.fromARGB(255, 193, 185, 214),
+          surface: Colors.grey[350],
+          onSurface: const Color(0xFF1C1B1F),
           seedColor: Colors.deepPurple,
+          error: Colors.grey[350],
         ),
         cardColor: Colors.deepPurple,
         primaryColor: Colors.deepPurple,
-        scaffoldBackgroundColor: const Color(0xFF212121),
-        appBarTheme: const AppBarTheme(
-          color: Color(0xFF1C1B1F),
+        scaffoldBackgroundColor: Colors.grey[350],
+        appBarTheme: AppBarTheme(
+          color: Colors.deepPurple,
           toolbarHeight: 100,
           iconTheme: IconThemeData(
-            color: Colors.white,
+            color: Colors.grey[350],
+          ),
+          titleTextStyle: TextStyle(
+            color: Colors.grey[350],
+            fontSize: 20,
+          ),
+          toolbarTextStyle: TextStyle(
+            color: Colors.grey[350],
+            fontSize: 20,
           ),
         ),
         textTheme: const TextTheme(
           displayLarge: TextStyle(
             fontSize: 24.0,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Color(0xFF1C1B1F),
           ),
           displayMedium: TextStyle(
             fontSize: 20.0,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Color(0xFF1C1B1F),
           ),
           displaySmall: TextStyle(
             fontSize: 18.0,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Color(0xFF1C1B1F),
           ),
           headlineMedium: TextStyle(
             fontSize: 16.0,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Color(0xFF1C1B1F),
           ),
           headlineSmall: TextStyle(
             fontSize: 14.0,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Color(0xFF1C1B1F),
           ),
           titleLarge: TextStyle(
             fontSize: 12.0,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Color(0xFF1C1B1F),
           ),
-          titleMedium: TextStyle(
-            fontSize: 16.0,
-            color: Colors.white,
-          ),
+          titleMedium: TextStyle(fontSize: 16.0, color: Colors.white),
           titleSmall: TextStyle(
             fontSize: 14.0,
-            color: Colors.white,
+            color: Color(0xFF1C1B1F),
           ),
         ),
         inputDecorationTheme: InputDecorationTheme(
@@ -74,7 +81,7 @@ class ThemeRepository {
             fontSize: 14,
           ),
           labelStyle: const TextStyle(
-            color: Colors.white,
+            color: Color(0xFF1C1B1F),
             fontSize: 16,
           ),
           border: outlineInputBorder,

@@ -1,13 +1,13 @@
 import 'package:sportion/library.dart';
 
-class NutritionScreen extends StatefulWidget {
+class NutritionScreen extends ConsumerStatefulWidget {
   const NutritionScreen({super.key});
 
   @override
-  State<NutritionScreen> createState() => _NutritionScreenState();
+  ConsumerState<NutritionScreen> createState() => _NutritionScreenState();
 }
 
-class _NutritionScreenState extends State<NutritionScreen> {
+class _NutritionScreenState extends ConsumerState<NutritionScreen> {
   late TextEditingController _controller;
 
   @override
@@ -74,9 +74,19 @@ class _NutritionScreenState extends State<NutritionScreen> {
                   ),
                   itemCount: nutritionList.length,
                   itemBuilder: (context, index) {
+                    String toKg(double value) {
+                      if (value == 100) {
+                        return '100g';
+                      } else if (value == 1000) {
+                        return '1 kg';
+                      }
+                      return '${(value / 1000).toStringAsFixed(2)} kg';
+                    }
+
                     final nutrition = nutritionList[index];
                     final name = nutrition['name'];
                     final calories = nutrition['calories'];
+                    final serving = nutrition['serving_size_g'];
                     return ListTile(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
@@ -85,10 +95,10 @@ class _NutritionScreenState extends State<NutritionScreen> {
                       style: ListTileStyle.drawer,
                       leading: CustomText(
                         text: name.toString(),
-                        isHeadline: true,
+                        size: 20,
                       ),
                       title: CustomText(
-                        text: '$calories cal',
+                        text: '$calories cal per ${toKg(serving)}',
                         isSeccoundary: true,
                       ),
                     );

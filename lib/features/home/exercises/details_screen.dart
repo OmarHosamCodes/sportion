@@ -1,10 +1,10 @@
 import 'package:sportion/library.dart';
 
-class DetailsScreen extends StatelessWidget {
+class DetailsScreen extends ConsumerWidget {
   const DetailsScreen({super.key, required this.extra});
   final dynamic extra;
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     final category = extra as String;
 
     return Scaffold(
@@ -29,7 +29,8 @@ class DetailsScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final exercise = exercises[index];
                     return Card.filled(
-                      color: const Color(0xFF1C1B1F),
+                      color:
+                          RoutingRepository.context.theme.colorScheme.secondary,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

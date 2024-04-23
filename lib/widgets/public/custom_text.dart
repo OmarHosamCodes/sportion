@@ -1,6 +1,6 @@
 import 'package:sportion/library.dart';
 
-class CustomText extends StatelessWidget {
+class CustomText extends ConsumerWidget {
   const CustomText({
     required this.text,
     super.key,
@@ -33,16 +33,16 @@ class CustomText extends StatelessWidget {
 
   TextStyle get style {
     if (isSeccoundary) {
-      return Theme.of(RoutingRepository.context).textTheme.titleMedium!;
+      return RoutingRepository.context.theme.textTheme.titleMedium!;
     } else if (isHeadline) {
-      return Theme.of(RoutingRepository.context).textTheme.displayMedium!;
+      return RoutingRepository.context.theme.textTheme.displayMedium!;
     } else {
-      return Theme.of(RoutingRepository.context).textTheme.titleMedium!;
+      return RoutingRepository.context.theme.textTheme.titleMedium!;
     }
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return Text(
       text,
       style: style.copyWith(

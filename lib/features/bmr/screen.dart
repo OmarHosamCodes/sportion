@@ -1,14 +1,14 @@
 import 'package:sportion/features/bmr/repository.dart';
 import 'package:sportion/library.dart';
 
-class BMRScreen extends StatefulWidget {
+class BMRScreen extends ConsumerStatefulWidget {
   const BMRScreen({super.key});
 
   @override
-  State<BMRScreen> createState() => _BMRScreenState();
+  ConsumerState<BMRScreen> createState() => _BMRScreenState();
 }
 
-class _BMRScreenState extends State<BMRScreen> {
+class _BMRScreenState extends ConsumerState<BMRScreen> {
   static final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   late TextEditingController weightController;
@@ -40,21 +40,26 @@ class _BMRScreenState extends State<BMRScreen> {
   // List of activity levels with corresponding multipliers
   final List<DropdownMenuItem<double>> activityLevels = [
     const DropdownMenuItem(
-        value: 1.2, child: Text('Sedentary (Little or no exercise)')),
+        value: 1.2,
+        child: CustomText(text: 'Sedentary (Little or no exercise)')),
     const DropdownMenuItem(
         value: 1.375,
-        child: Text('Lightly Active (Light exercise/sports 1-3 days/week)')),
+        child: CustomText(
+            text: 'Lightly Active (Light exercise/sports 1-3 days/week)')),
     const DropdownMenuItem(
         value: 1.55,
-        child:
-            Text('Moderately Active (Moderate exercise/sports 3-5 days/week)')),
+        child: CustomText(
+            text:
+                'Moderately Active (Moderate exercise/sports 3-5 days/week)')),
     const DropdownMenuItem(
         value: 1.725,
-        child: Text('Very Active (Hard exercise/sports 6-7 days/week)')),
+        child: CustomText(
+            text: 'Very Active (Hard exercise/sports 6-7 days/week)')),
     const DropdownMenuItem(
         value: 1.9,
-        child: Text(
-            'Extremely Active (Very hard exercise/sports & physical job)')),
+        child: CustomText(
+            text:
+                'Extremely Active (Very hard exercise/sports & physical job)')),
   ];
 
   @override

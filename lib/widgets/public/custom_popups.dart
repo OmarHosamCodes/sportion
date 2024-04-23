@@ -1,6 +1,6 @@
 import 'package:sportion/library.dart';
 
-class CustomPopups extends StatelessWidget {
+class CustomPopups extends ConsumerWidget {
   const CustomPopups.dialog({
     super.key,
     this.title,
@@ -69,7 +69,7 @@ class CustomPopups extends StatelessWidget {
   final void Function()? onConfirm;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return switch (popupType!) {
       PopupType.dialog => _buildDialog(),
       PopupType.snackBar => _buildSnackBar(),
@@ -85,8 +85,9 @@ class CustomPopups extends StatelessWidget {
         DialogType.success => Colors.green,
         DialogType.error => Colors.red,
         DialogType.warning => Colors.deepOrange,
-        DialogType.info => Colors.deepPurple,
-        DialogType.question => Colors.deepPurple,
+        DialogType.info => RoutingRepository.context.theme.colorScheme.primary,
+        DialogType.question =>
+          RoutingRepository.context.theme.colorScheme.primary,
       },
       title: CustomText(
         text: title!,

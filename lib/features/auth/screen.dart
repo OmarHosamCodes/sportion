@@ -2,7 +2,7 @@ import 'package:sportion/features/auth/login.dart';
 import 'package:sportion/features/auth/register.dart';
 import 'package:sportion/library.dart';
 
-class AuthScreen extends StatefulWidget {
+class AuthScreen extends ConsumerStatefulWidget {
   const AuthScreen({super.key});
 
   static final PageController pageController = PageController();
@@ -16,10 +16,10 @@ class AuthScreen extends StatefulWidget {
   }
 
   @override
-  State<AuthScreen> createState() => _AuthScreenState();
+  ConsumerState<AuthScreen> createState() => _AuthScreenState();
 }
 
-class _AuthScreenState extends State<AuthScreen> {
+class _AuthScreenState extends ConsumerState<AuthScreen> {
   late TextEditingController emailController;
   late TextEditingController passwordController;
   late TextEditingController nameController;

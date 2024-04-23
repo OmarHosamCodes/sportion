@@ -1,13 +1,13 @@
 import 'package:sportion/library.dart';
 
-class CustomSideBySide extends StatelessWidget {
+class CustomSideBySide extends ConsumerWidget {
   const CustomSideBySide(
       {super.key, required this.input, this.ratio = const (1, 3)});
   final (String, String) input;
   final (int, int) ratio;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return Row(
       children: [
         Expanded(
@@ -27,7 +27,7 @@ class CustomSideBySide extends StatelessWidget {
           flex: ratio.$2,
           child: CustomGlassMorphismContainer(
             blur: 10.0,
-            color: const Color(0xFF1C1B1F),
+            color: RoutingRepository.context.theme.colorScheme.secondary,
             opacity: 1,
             borderRadius: const BorderRadius.only(
               topRight: Radius.circular(10),

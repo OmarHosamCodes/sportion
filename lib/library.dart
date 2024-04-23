@@ -1,4 +1,6 @@
-export 'package:sportion/features/auth/provider.dart';
+export 'package:sportion/features/water/repository.dart';
+export 'main.dart';
+export 'features/auth/provider.dart';
 export 'dart:convert';
 export 'dart:io';
 export 'package:flutter/foundation.dart';
@@ -45,7 +47,7 @@ export 'features/home/screen.dart';
 export 'features/profile/screen.dart';
 export 'features/routing/screen.dart';
 export 'features/water/screen.dart';
-export 'package:flutter/material.dart';
+export 'package:flutter/material.dart' hide StatefulWidget;
 export 'package:go_router/go_router.dart';
 export 'features/routing/constants.dart';
 export 'package:firebase_auth/firebase_auth.dart';

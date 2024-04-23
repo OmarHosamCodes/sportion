@@ -1,7 +1,7 @@
 import 'package:sportion/library.dart';
 
 /// A custom text field widget for Quantum Muscle app.
-class CustomTextField extends StatelessWidget {
+class CustomTextField extends ConsumerWidget {
   /// Creates a [CustomTextField].
   ///
   /// The [controller], [hintText], and [textInputAction]
@@ -96,7 +96,7 @@ class CustomTextField extends StatelessWidget {
       );
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return TextFormField(
       autofocus: autoFocus,
       strutStyle: const StrutStyle(height: 1),
@@ -111,7 +111,6 @@ class CustomTextField extends StatelessWidget {
           ),
       textAlignVertical: TextAlignVertical.top,
       maxLines: isExpanded ? null : 1,
-      // cursorColor: const Color(0xFFF1F8E9),
       controller: controller,
       obscureText: obscureText,
       textInputAction: textInputAction,

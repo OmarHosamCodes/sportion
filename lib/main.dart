@@ -8,17 +8,16 @@ Future<void> main() async {
   );
   await dotenv.load(fileName: ".env");
   await SharedPreferences.getInstance();
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(const ProviderScope(child: Sportion()));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Sportion extends ConsumerWidget {
+  const Sportion({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp.router(
-      themeMode: ThemeRepository.themeMode,
-      darkTheme: ThemeRepository.theme,
+      theme: ThemeRepository.theme,
       routerConfig: RoutingRepository.router,
     );
   }

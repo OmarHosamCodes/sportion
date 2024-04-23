@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:sportion/library.dart';
 
-class CustomGlassMorphismContainer extends StatelessWidget {
+class CustomGlassMorphismContainer extends ConsumerWidget {
   final Widget child;
   final double blur;
   final BorderRadius? borderRadius;
@@ -24,7 +24,7 @@ class CustomGlassMorphismContainer extends StatelessWidget {
       borderRadius ?? BorderRadius.circular(SimpleConstants.radius);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return ClipRRect(
       borderRadius: _borderRadius,
       child: BackdropFilter(

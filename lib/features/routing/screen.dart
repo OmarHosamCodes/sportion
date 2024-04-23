@@ -5,7 +5,7 @@ import 'package:sportion/library.dart';
 ///
 /// This widget represents a screen that can be used for routing purposes.
 /// It takes a [child] widget and a [state] of type [GoRouterState].
-class RoutingScreen extends StatefulWidget {
+class RoutingScreen extends ConsumerStatefulWidget {
   /// Constructs a [RoutingScreen] widget.
   const RoutingScreen({
     required this.child,
@@ -20,10 +20,10 @@ class RoutingScreen extends StatefulWidget {
   final GoRouterState state;
 
   @override
-  State<RoutingScreen> createState() => _RoutingScreenState();
+  ConsumerState<RoutingScreen> createState() => _RoutingScreenState();
 }
 
-class _RoutingScreenState extends State<RoutingScreen> {
+class _RoutingScreenState extends ConsumerState<RoutingScreen> {
   static const routes = [
     Routes.home,
     Routes.bmr,

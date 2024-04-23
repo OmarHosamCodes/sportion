@@ -1,6 +1,6 @@
 import 'package:sportion/library.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   static const List<(String, String)> _grids = [
@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   ];
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return Scaffold(
       appBar: AppBar(
         title: const CustomText(text: 'Welcome To Sportion!'),
@@ -43,8 +43,11 @@ class HomeScreen extends StatelessWidget {
                           Container(
                             width: context.width,
                             height: 200.0,
-                            color: context.theme.scaffoldBackgroundColor
-                                .withOpacity(.7),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: context.theme.colorScheme.primary
+                                  .withOpacity(.35),
+                            ),
                           ),
                           FittedBox(
                             fit: BoxFit.fitWidth,
@@ -81,8 +84,11 @@ class HomeScreen extends StatelessWidget {
                           Container(
                             width: context.width,
                             height: 200.0,
-                            color: context.theme.scaffoldBackgroundColor
-                                .withOpacity(.7),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: context.theme.colorScheme.primary
+                                  .withOpacity(.35),
+                            ),
                           ),
                           FittedBox(
                             fit: BoxFit.fitWidth,
@@ -121,8 +127,11 @@ class HomeScreen extends StatelessWidget {
                       Container(
                         width: context.width,
                         height: 200.0,
-                        color: context.theme.scaffoldBackgroundColor
-                            .withOpacity(.7),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: context.theme.colorScheme.primary
+                              .withOpacity(.35),
+                        ),
                       ),
                       FittedBox(
                         fit: BoxFit.fitWidth,

@@ -1,6 +1,6 @@
 import 'package:sportion/library.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen(
       {super.key,
       required this.emailController,
@@ -10,10 +10,10 @@ class LoginScreen extends StatefulWidget {
   final TextEditingController emailController;
   final TextEditingController passwordController;
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  ConsumerState<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends ConsumerState<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         );
                       }
                     },
-                    child: const CustomText(text: 'Login'),
+                    child: const Text('Login'),
                   ),
                 ),
                 const CustomGap(
@@ -79,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 CustomButton.flat(
                   onPressed: () => AuthScreen.changePage(1),
-                  child: const CustomText(text: 'Not A Member? Register'),
+                  child: const Text('Not A Member? Register'),
                 ),
               ],
             ),

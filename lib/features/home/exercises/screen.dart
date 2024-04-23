@@ -1,10 +1,10 @@
 import 'package:sportion/library.dart';
 
-class ExcerisesScreen extends StatelessWidget {
+class ExcerisesScreen extends ConsumerWidget {
   const ExcerisesScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return Scaffold(
       appBar: AppBar(
         title: const CustomText(text: 'Nutrition'),

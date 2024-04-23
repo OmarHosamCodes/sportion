@@ -1,6 +1,6 @@
 import 'package:sportion/library.dart';
 
-class CustomButton extends StatelessWidget {
+class CustomButton extends ConsumerWidget {
   const CustomButton.flat({
     required this.onPressed,
     required this.child,
@@ -29,21 +29,6 @@ class CustomButton extends StatelessWidget {
         elevation = 1,
         icon = null;
 
-  /// for any button with icon
-  const CustomButton.withIcon({
-    required this.onPressed,
-    required this.child,
-    required this.icon,
-    super.key,
-    this.color,
-    this.borderRadius,
-    this.margin,
-    this.padding,
-    this.width,
-    this.height,
-  })  : type = CustomButtonType.withIconButton,
-        elevation = null;
-
   final void Function() onPressed;
   final Widget child;
   final Color? color;
@@ -63,14 +48,13 @@ class CustomButton extends StatelessWidget {
   final CustomButtonType type;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return SizedBox(
       width: width,
       height: height,
       child: switch (type) {
         CustomButtonType.flatButton => _buildflat(),
         CustomButtonType.raisedButton => _buildRaised(),
-        CustomButtonType.withIconButton => _buildWithIcon()
       },
     );
   }
@@ -101,32 +85,9 @@ class CustomButton extends StatelessWidget {
       child: child,
     );
   }
-
-  Widget _buildWithIcon() {
-    return MaterialButton(
-      onPressed: onPressed,
-      color: color,
-      elevation: elevation,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(borderRadius ?? 10),
-      ),
-      padding: padding,
-      height: height,
-      child: Row(
-        children: [
-          Icon(icon),
-          const CustomGap(
-            width: 5,
-          ),
-          child,
-        ],
-      ),
-    );
-  }
 }
 
 enum CustomButtonType {
   flatButton,
   raisedButton,
-  withIconButton,
 }

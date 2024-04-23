@@ -47,21 +47,21 @@ flutter:
     - .env
 
 flutter_native_splash:
-  color: "#212121"
+  color: "#D6D6D6"
 
   image: assets/logo.png
 
-  color_dark: "#212121"
+  color_dark: "#D6D6D6"
 
   image_dark: assets/logo.png
 
   android_12:
     image: assets/logo.png
 
-    color: "#212121"
+    color: "#D6D6D6"
 
     image_dark: assets/logo.png
-    color_dark: "#212121"
+    color_dark: "#D6D6D6"
 
   android: true
   ios: true
