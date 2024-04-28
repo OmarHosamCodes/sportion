@@ -85,7 +85,10 @@ class _BMRScreenState extends ConsumerState<BMRScreen> {
                     hintText: 'Weight (kg)',
                     onChanged: (value) =>
                         setState(() => weight = double.parse(value)),
-                  ),
+                  ).animate().fade(
+                        delay: const Duration(milliseconds: 100 * 0),
+                        duration: const Duration(milliseconds: 500),
+                      ),
                   const CustomGap(),
                   // Text field for height
                   CustomTextField(
@@ -95,7 +98,10 @@ class _BMRScreenState extends ConsumerState<BMRScreen> {
                     hintText: 'Height (cm)',
                     onChanged: (value) =>
                         setState(() => height = double.parse(value)),
-                  ),
+                  ).animate().fade(
+                        delay: const Duration(milliseconds: 100 * 1),
+                        duration: const Duration(milliseconds: 500),
+                      ),
                   const CustomGap(),
                   // Text field for age
                   CustomTextField(
@@ -105,7 +111,10 @@ class _BMRScreenState extends ConsumerState<BMRScreen> {
                     hintText: 'Age (years)',
                     onChanged: (value) =>
                         setState(() => age = int.parse(value)),
-                  ),
+                  ).animate().fade(
+                        delay: const Duration(milliseconds: 100 * 2),
+                        duration: const Duration(milliseconds: 500),
+                      ),
                 ],
               ),
             ),
@@ -147,7 +156,10 @@ class _BMRScreenState extends ConsumerState<BMRScreen> {
                   ),
                 ],
               ),
-            ),
+            ).animate().fade(
+                  delay: const Duration(milliseconds: 100 * 3),
+                  duration: const Duration(milliseconds: 500),
+                ),
             const CustomGap(),
             // Dropdown for activity level
             FittedBox(
@@ -158,7 +170,10 @@ class _BMRScreenState extends ConsumerState<BMRScreen> {
                     setState(() => activityMultiplier = value!),
                 hint: const Text('Select Activity Level'),
               ),
-            ),
+            ).animate().fade(
+                  delay: const Duration(milliseconds: 100 * 4),
+                  duration: const Duration(milliseconds: 500),
+                ),
             const CustomGap(),
             // Calculate button
             Consumer(
@@ -193,7 +208,10 @@ class _BMRScreenState extends ConsumerState<BMRScreen> {
                     }
                   },
                   child: const Text('Calculate BMR'),
-                );
+                ).animate().fade(
+                      delay: const Duration(milliseconds: 100 * 5),
+                      duration: const Duration(milliseconds: 500),
+                    );
               },
             ),
           ],

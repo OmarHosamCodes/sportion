@@ -27,7 +27,6 @@ class _RoutingScreenState extends ConsumerState<RoutingScreen> {
   static const routes = [
     Routes.home,
     Routes.bmr,
-    Routes.water,
     Routes.profile,
   ];
   @override
@@ -47,10 +46,6 @@ class _RoutingScreenState extends ConsumerState<RoutingScreen> {
                   SalomonBottomBarItem(
                     icon: const Icon(Icons.whatshot),
                     title: const Text('BMR'),
-                  ),
-                  SalomonBottomBarItem(
-                    icon: const Icon(Icons.water_drop),
-                    title: const Text('Water Intake'),
                   ),
                   SalomonBottomBarItem(
                     icon: const Icon(Icons.person),

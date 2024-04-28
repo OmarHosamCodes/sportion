@@ -89,9 +89,3 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     );
   }
 }
-
-enum UserType {
-  volunteer,
-  recruiter,
-  csrOrFunder,
-}

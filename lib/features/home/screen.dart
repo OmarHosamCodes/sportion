@@ -4,9 +4,10 @@ class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   static const List<(String, String)> _grids = [
-    ('Sports', 'assets/sports_bg.png'),
-    ('Nutrition', 'assets/nutrition_bg.png'),
-    ('Community', 'assets/community_bg.png'),
+    ('assets/sports_bg.png', Routes.sports),
+    ('assets/nutrition_bg.png', Routes.nutrition),
+    ('assets/community_bg.png', Routes.community),
+    ('assets/water_bg.png', Routes.water),
   ];
 
   @override
@@ -16,137 +17,43 @@ class HomeScreen extends ConsumerWidget {
         title: const CustomText(text: 'Welcome To Sportion!'),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Flexible(
-                  child: InkWell(
-                    onTap: () =>
-                        RoutingRepository.push(Routes.excerisesCategories),
-                    child: Card.filled(
-                      color: Colors.deepPurple,
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: CustomImage(
-                              source: _grids[0].$2,
-                              width: context.width,
-                              height: 200.0,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          Container(
-                            width: context.width,
-                            height: 200.0,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: context.theme.colorScheme.primary
-                                  .withOpacity(.35),
-                            ),
-                          ),
-                          FittedBox(
-                            fit: BoxFit.fitWidth,
-                            child: CustomText(
-                              text: _grids[0].$1,
-                              size: 25,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                const CustomGap(
-                  width: 10,
-                ),
-                Flexible(
-                  child: InkWell(
-                    onTap: () => RoutingRepository.push(Routes.nutrition),
-                    child: Card.filled(
-                      color: Colors.deepPurple,
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: CustomImage(
-                              source: _grids[1].$2,
-                              width: context.width,
-                              height: 200.0,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                          Container(
-                            width: context.width,
-                            height: 200.0,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: context.theme.colorScheme.primary
-                                  .withOpacity(.35),
-                            ),
-                          ),
-                          FittedBox(
-                            fit: BoxFit.fitWidth,
-                            child: CustomText(
-                              text: _grids[1].$1,
-                              size: 25,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const CustomGap(),
-            SizedBox(
-              height: 200.0,
-              width: context.width,
-              child: InkWell(
-                onTap: () => RoutingRepository.push(Routes.community),
-                child: Card.filled(
-                  color: Colors.deepPurple,
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: CustomImage(
-                          source: _grids[2].$2,
-                          width: context.width,
-                          height: 200.0,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      Container(
-                        width: context.width,
-                        height: 200.0,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: context.theme.colorScheme.primary
-                              .withOpacity(.35),
-                        ),
-                      ),
-                      FittedBox(
-                        fit: BoxFit.fitWidth,
-                        child: CustomText(
-                          text: _grids[2].$1,
-                          size: 25,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ],
+      body: GridView.builder(
+        padding: const EdgeInsets.all(16),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 16,
+          mainAxisSpacing: 16,
         ),
+        itemCount: _grids.length,
+        itemBuilder: (context, index) {
+          final grid = _grids[index];
+          return GestureDetector(
+            onTap: () {
+              RoutingRepository.push(grid.$2);
+            },
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: CustomImage(
+                      source: grid.$1,
+                      height: context.height,
+                      width: context.width,
+                    ),
+                  ),
+                ],
+              ),
+            ).animate().fade(
+                  delay: Duration(milliseconds: 100 * index),
+                  duration: const Duration(milliseconds: 500),
+                ),
+          );
+        },
       ),
     );
   }

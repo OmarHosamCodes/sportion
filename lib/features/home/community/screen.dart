@@ -1,4 +1,3 @@
-import 'package:sportion/features/home/community/widgets.dart';
 import 'package:sportion/library.dart';
 
 class CommumityScreen extends ConsumerWidget {
@@ -9,6 +8,7 @@ class CommumityScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const CustomText(text: 'Community'),
+        centerTitle: true,
         actions: [
           IconButton(
             icon: const Icon(Icons.add),
@@ -36,7 +36,10 @@ class CommumityScreen extends ConsumerWidget {
                   itemCount: posts.length,
                   itemBuilder: (context, index) {
                     final post = posts[index];
-                    return PostWidget(post: post);
+                    return PostWidget(post: post).animate().fade(
+                          delay: Duration(milliseconds: 100 * index),
+                          duration: const Duration(milliseconds: 500),
+                        );
                   },
                 );
               } else {

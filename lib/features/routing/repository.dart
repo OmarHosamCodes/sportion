@@ -5,6 +5,15 @@ class RoutingRepository {
 
   static final GlobalKey<NavigatorState> navigatorKey =
       GlobalKey<NavigatorState>();
+  List<GoRoute> get sports => SportModel.sports
+      .map(
+        (sport) => GoRoute(
+          name: sport.title.toLowerCase(),
+          path: '/${sport.title.toLowerCase()}',
+          builder: (context, state) => sport.route,
+        ),
+      )
+      .toList();
 
   static BuildContext get context => navigatorKey.currentContext!;
   static final router = GoRouter(
@@ -58,6 +67,11 @@ class RoutingRepository {
           extra: state.extra,
         ),
       ),
+      GoRoute(
+        path: Routes.sports,
+        builder: (context, state) => const SportsScreen(),
+      ),
+      ...instance.sports,
       GoRoute(
         name: Routes.authRoot,
         path: Routes.auth,

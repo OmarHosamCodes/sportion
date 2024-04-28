@@ -37,7 +37,7 @@ class ExcerisesScreen extends ConsumerWidget {
                         extra: categories[index],
                       ),
                       child: Card.filled(
-                        color: context.theme.primaryColor.withOpacity(.5),
+                        color: context.theme.primaryColor,
                         child: Stack(
                           alignment: Alignment.center,
                           children: [
@@ -45,7 +45,7 @@ class ExcerisesScreen extends ConsumerWidget {
                               width: context.width,
                               height: context.height,
                               color: context.theme.scaffoldBackgroundColor
-                                  .withOpacity(.7),
+                                  .withOpacity(.5),
                             ),
                             FittedBox(
                               fit: BoxFit.fitWidth,

@@ -1,5 +1,6 @@
 class Routes {
   static const String home = '/';
+
   static const String homeRoot = 'home';
 
   static const String auth = '/auth';
@@ -41,4 +42,8 @@ class Routes {
   static const String addPost = '/add-post';
 
   static const String addPostRoot = 'add-post';
+
+  static const String sports = '/sports';
+
+  static const String sportsRoot = 'sports';
 }

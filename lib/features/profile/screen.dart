@@ -47,7 +47,10 @@ class ProfileScreen extends ConsumerWidget {
                   data: (user) => CustomSideBySide(
                     input: ("Name", user!.name),
                     ratio: (1, 4),
-                  ),
+                  ).animate().fade(
+                        delay: const Duration(milliseconds: 100 * 0),
+                        duration: const Duration(milliseconds: 500),
+                      ),
                   orElse: () => const CustomSideBySide(
                     input: ("Name", "Loading..."),
                     ratio: (1, 4),
@@ -63,7 +66,10 @@ class ProfileScreen extends ConsumerWidget {
                   data: (user) => CustomSideBySide(
                     input: ("Email", user!.email),
                     ratio: (1, 4),
-                  ),
+                  ).animate().fade(
+                        delay: const Duration(milliseconds: 100 * 1),
+                        duration: const Duration(milliseconds: 500),
+                      ),
                   orElse: () => const CustomSideBySide(
                     input: ("Email", "Loading..."),
                     ratio: (1, 4),
@@ -81,12 +87,18 @@ class ProfileScreen extends ConsumerWidget {
                       CustomSideBySide(
                         input: ("BMR", "${user!.bmr} Kcal/day"),
                         ratio: (1, 4),
-                      ),
+                      ).animate().fade(
+                            delay: const Duration(milliseconds: 100 * 2),
+                            duration: const Duration(milliseconds: 500),
+                          ),
                       const CustomGap(),
                       CustomSideBySide(
                         input: ("Water Intake", "${user.waterIntake} l/day"),
                         ratio: (2, 4),
-                      ),
+                      ).animate().fade(
+                            delay: const Duration(milliseconds: 100 * 3),
+                            duration: const Duration(milliseconds: 500),
+                          ),
                     ],
                   ),
                   orElse: () => const Column(
